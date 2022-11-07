@@ -1,0 +1,8 @@
+p.app_header_name {
+    display: contents;
+}
+.app_header .user-box.dropdown {
+    position: absolute !important;
+    right: 0;
+}
+
