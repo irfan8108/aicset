@@ -70,7 +70,7 @@
                                             </p>
 
                                             <br><br>
-                                            <a href="javascript:void(0)" class="btn btn-success">Download Application Form</a>
+                                            <a href="{{ route('application_print') }}" class="btn btn-success" target="_blank">Download Application Form</a>
 
                                             <br><br><br><br><br><br>
 

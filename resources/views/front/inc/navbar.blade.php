@@ -9,16 +9,16 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="{{ route('home') }}">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/National_emblem_of_Bangladesh.svg/1200px-National_emblem_of_Bangladesh.svg.png" width="110px">
+          <img src="{{ asset('uploads/logo.png') }}" width="110px">
         </a>
       </div>
       <div class="navbar-collapse collapse navbar-right main-nav" id="navbar">
          <ul class="nav navbar-nav ">
           <li id="sub-1"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-          <li id="sub-3"><a href="{{ route('detail') }}">Scholarship & Admissions</a></li>
-          <li id="sub-2"><a href="#features">Important Dates</a></li>
+          <li id="sub-3"><a href="{{ route('detail') }}">Scholarship Scheme</a></li>
+          <li id="sub-2"><a href="{{ route('eligibility') }}">Eligibility Criteria</a></li>
           <li id="sub-2"><a href="#features">Affiliations</a></li>
-          <li id="sub-4"><a href="#faqs">FAQS</a></li>
+          <li id="sub-4"><a href="{{ route('about') }}">About</a></li>
         </ul>
         @if(Auth::check())
           @if(Auth::user())

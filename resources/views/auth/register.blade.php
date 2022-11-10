@@ -47,34 +47,39 @@
 										<hr/>
 									</div> --}}
 									<div class="form-body">
-										<form action="{{ route('register') }}" method="post" class="row g-3">
+										<form action="{{ route('register') }}" method="post" class="g-3">
 											@csrf
-											<div class="col-12 col-xs-6 div-">
-												<label for="name" class="form-label">Full Name</label>
-												<input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
-												<small class="error_c"><x-input-error :messages="$errors->get('name')" class="mt-2" /></small>
+											<div class="row">
+												<div class="col-12 col-xs-6 div-">
+													<label for="name" class="form-label">Full Name</label>
+													<input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
+													<small class="error_c"><x-input-error :messages="$errors->get('name')" class="mt-2" /></small>
+												</div>
+												<div class="col-lg-6 col-xs-6 div-">
+													<label for="inputEmailAddress" class="form-label">Email Address</label>
+													<input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="Email Address">
+													<small class="error_c"><x-input-error :messages="$errors->get('email')" class="mt-2" /></small>
+												</div>
 											</div>
-											<div class="col-12 col-xs-6 div-">
-												<label for="inputEmailAddress" class="form-label">Email Address</label>
-												<input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="Email Address">
-												<small class="error_c"><x-input-error :messages="$errors->get('email')" class="mt-2" /></small>
+											<div class="row">
+												<div class="col-12 col-xs-6 div-">
+													<label for="mob" class="form-label">Mobile No</label>
+													<input type="tel" maxlength="10" name="mobile" class="form-control" id="mob" placeholder="Mobile Number">
+													<small class="error_c"><x-input-error :messages="$errors->get('mobile')" class="mt-2" /></small>
+												</div>
+												<div class="col-12 col-xs-6 div-">
+													<label for="state" class="form-label">Select State</label>
+													<select name="state" class="form-control" id="state">
+		                                                <option value="">Select State</option>
+		                                                @foreach($states as $state)
+		                                                	<option value="{{ $state->id }}">{{ $state->name }}</option>
+		                                                @endforeach
+		                                            </select>
+													<small class="error_c"><x-input-error :messages="$errors->get('state')" class="mt-2"/></small>
+												</div>
 											</div>
-											<div class="col-12 col-xs-6 div-">
-												<label for="mob" class="form-label">Mobile No</label>
-												<input type="tel" maxlength="10" name="mobile" class="form-control" id="mob" placeholder="Mobile Number">
-												<small class="error_c"><x-input-error :messages="$errors->get('mobile')" class="mt-2" /></small>
-											</div>
-											<div class="col-12 col-xs-6 div-">
-												<label for="state" class="form-label">Select State</label>
-												<select name="state" class="form-control" id="state">
-	                                                <option value="">Select State</option>
-	                                                @foreach($states as $state)
-	                                                	<option value="{{ $state->id }}">{{ $state->name }}</option>
-	                                                @endforeach
-	                                            </select>
-												<small class="error_c"><x-input-error :messages="$errors->get('state')" class="mt-2"/></small>
-											</div>
-											<div class="col-12 col-lg-12 col-sm-12 div-">
+											<div class="row">
+											  <div class="col-12 col-lg-12 col-sm-12 div-">
 												<label for="level" class="form-label">Qualification Level</label>
 												<select name="qualification" class="form-control" id="level">
 	                                                <option value="" selected>Select Qualification</option>
@@ -85,8 +90,10 @@
 	                                                <option value="Other(Eqivalent)">Other (Eqivalent)</option>
 	                                            </select>	
 												<small class="error_c"><x-input-error :messages="$errors->get('qualification')" class="mt-2" /></small>
+											  </div>
 											</div>
-											<div class="col-12 col-lg-12 col-sm-12 div-">
+											<div class="row">  
+											  <div class="col-12 col-lg-12 col-sm-12 div-">
 												<label for="applyfor" class="form-label">Select Course Stream (Scholarship Applying for)</label>
 												<select name="apply_for" class="form-control" id="applyfor">
 	                                                <option value="" selected>Select Qualification</option>
@@ -96,32 +103,37 @@
 	                                                <option value="OTH">Other</option>
 	                                            </select>	
 												<small class="error_c"><x-input-error :messages="$errors->get('apply_for')" class="mt-2" /></small>
+											  </div>
 											</div>
-											<div class="col-12 col-xs-6 div-">
+											<div class="row">  
+											  <div class="col-12 col-xs-6 div-">
 												<label for="inputChoosePassword" class="form-label">Choose Password</label>
 												<div id="show_hide_password">
 													<input type="password" class="form-control border-end-0" id="inputChoosePassword" name="password" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
                 									<small class="error_c"><x-input-error :messages="$errors->get('password')" class="mt-2" /></small>
 												</div>
-											</div>
-											<div class="col-12 col-xs-6 div-">
+											  </div>
+											  <div class="col-12 col-xs-6 div-">
 												<label for="cpass" class="form-label">Confirm Password</label>
 												<div id="show_hide_cpassword">
 													<input type="password" class="form-control border-end-0" id="cpass" name="password_confirmation" placeholder="Confirm Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
                 									<small class="error_c"><x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" /></small>
 												</div>
-											</div>
+											  </div>
+											</div>  
 											{{-- <div class="col-12 div-">
 												<div class="form-check form-switch">
 													<input class="form-check-input" type="checkbox" id="check">
 													<label class="form-check-label" for="check"><small>I authorize AICSET to contact me with updates/ notifications via Email/ SMS/ Whatsapp/ Call, which overrides DND/NDNC registration.*</small></label>
 												</div>
 											</div> --}}
-											<div class="col-12 col-lg-12 col-sm-12 div-">
+											<div class="row">
+											  <div class="col-12 col-lg-12 col-sm-12 div-">
 												<div class="col-lg-12 col-sm-12 login-btn">
 													<button type="submit" class="btn btn-primary"><i class="bx bxs-lock-open"></i>Register Now</button>
 												</div>
-											</div>
+											  </div>
+											</div>  
 										</form>
 									</div>
 								</div>

@@ -5,7 +5,7 @@
         <div class="col-xs-12">
         <div class="row text-right dashbord_header">
             <div class="col-md-9 col-xs-12"><p><b>Name:</b> {{ Auth::user()->name }}</p></div>
-            <div class="col-md-3 col-xs-12"><p><b>Application No:</b>84846465456</p></div>
+            <div class="col-md-3 col-xs-12"><p><b>Application No:</b>{{ $user->registration->app_no }}</p></div>
         </div>
         </div>
     </div>      
@@ -139,26 +139,26 @@
                                             </tr>
                                             <tr>
                                                 <th>Education Board</th>
-                                                <th>{{ $user->application->intermediate_board_name }}</th>
+                                                <td>{{ $user->application->intermediate_board_name }}</td>
                                                 <th>School/Institute</th>
-                                                <th>{{ $user->application->intermediate_school_name }}</th>
+                                                <td>{{ $user->application->intermediate_school_name }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Status</th>
-                                                <th colspan="3">{{ $user->application->intermediate_qualification_status }}</th>
+                                                <td colspan="3">{{ $user->application->intermediate_qualification_status }}</td>
                                             </tr>
                                             @if($user->application->intermediate_qualification_status != 'Appearing')
                                             <tr>
                                                 <th>Passing Year</th>
-                                                <th>{{ $user->application->intermediate_passing_year }}</th>
+                                                <td>{{ $user->application->intermediate_passing_year }}</td>
                                                 <th>Total Marks</th>
-                                                <th>{{ $user->application->intermediate_total_marks }}</th>
+                                                <td>{{ $user->application->intermediate_total_marks }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Obtained Marks</th>
-                                                <th>{{ $user->application->intermediate_obtained_marks }}</th>
+                                                <td>{{ $user->application->intermediate_obtained_marks }}</td>
                                                 <th>School/Institute</th>
-                                                <th>{{ $user->application->intermediate_percentage_mark }}</th>
+                                                <td>{{ $user->application->intermediate_percentage_mark }}</td>
                                             </tr>
                                             @endif
 
@@ -167,21 +167,21 @@
                                             </tr>
                                             <tr>
                                                 <th>Education Board</th>
-                                                <th>{{ $user->application->matric_board_name }}</th>
+                                                <td>{{ $user->application->matric_board_name }}</td>
                                                 <th>School/Institute</th>
-                                                <th>{{ $user->application->matric_school_name }}</th>
+                                                <td>{{ $user->application->matric_school_name }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Passing Year</th>
-                                                <th>{{ $user->application->matric_passing_year }}</th>
+                                                <td>{{ $user->application->matric_passing_year }}</td>
                                                 <th>Total Marks</th>
-                                                <th>{{ $user->application->matric_total_marks }}</th>
+                                                <td>{{ $user->application->matric_total_marks }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Obtained Marks</th>
-                                                <th>{{ $user->application->matric_obtained_marks }}</th>
+                                                <td>{{ $user->application->matric_obtained_marks }}</td>
                                                 <th>School/Institute</th>
-                                                <th>{{ $user->application->matric_percentage_mark }}</th>
+                                                <td>{{ $user->application->matric_percentage_mark }}</td>
                                             </tr>
 
                                             <tr>
@@ -189,19 +189,19 @@
                                             </tr>
                                             <tr>
                                                 <th>Father Occupation</th>
-                                                <th>{{ $user->application->father_occupation ?? 'N/A' }}</th>
+                                                <td>{{ $user->application->father_occupation ?? 'N/A' }}</td>
                                                 <th>Mother Occupation</th>
-                                                <th>{{ $user->application->mother_occupation }}</th>
+                                                <td>{{ $user->application->mother_occupation }}</td>
                                             </tr>
                                             <tr>
                                                 <th>No. of Family Members</th>
-                                                <th>{{ $user->application->family_members ?? 'N/A' }}</th>
+                                                <td>{{ $user->application->family_members ?? 'N/A' }}</td>
                                                 <th>Monthly Income from all Sources</th>
-                                                <th>{{ $user->application->monthly_income }}</th>
+                                                <td>{{ $user->application->monthly_income }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Do you have a Govt. employee in your family?</th>
-                                                <th colspan="3">{{ $user->application->is_govt_department }}</th>
+                                                <td colspan="3">{{ $user->application->is_govt_department }}</td>
                                             </tr>
 
                                         </table>
@@ -218,7 +218,7 @@
                                         <label for="self_declaration">I confirmed all above details are correct in my knowlege.</label>
 
                                         <br>
-                                        <button type="button" class="btn btn-warning">Edit</button>
+                                        <a href="{{ route('application.edit', $user->application->id) }}" type="button" class="btn btn-warning">Edit</a>
                                         <button type="submit" class="btn-primary next-step">Submit & Next</button>
 
                                     </div>

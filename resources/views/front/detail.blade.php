@@ -5,7 +5,7 @@
 {{-- left-sidebar --}}
 <div class="container">
   <div class="row" style="margin: 10px 0px 50px 0px;">
-    <div class="col-md-3 col-sm-push-9">
+    <div class="col-sm-2">
       <nav-left class='animated bounceInDown'>
         <ul>
           <li><a href='#profile'>Application Procedure</a></li>
@@ -32,11 +32,72 @@
         </ul>
       </nav-left>
     </div>
-    <div class="col-md-9 col-sm-pull-3 about-detail">
-      <h3>About Scholarship Entrance Test</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passags, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <div class="col-sm-10 about-detail">
+      <h3>Scholarship Scheme</h3>
+      <p>This scholarship scheme is applicable to the qualified candidates of AICSET – 2023.</p>
+
+        <table class="table table-bordered">
+          <tr>
+            <th class="head">Total Number of Scholarship</th>
+            <th class="head">College Type</th>
+            <th class="head">Admission condition</th>
+            <th class="head">AICSET Ranks required</th>
+            <th class="head">Scholarship Details</th>
+          </tr>
+          <tr>
+            <td rowspan="3">1000</td>
+            <td rowspan="3">IITs | NITs | IIITs | CFTIs</td>
+            <td rowspan="3">Candidate must have taken admission through CSAB counselling using their JEE score</td>
+            <td>1-200</td>
+            <td>full tuition fees of 1st Year</td>
+          </tr>
+          <tr>
+            <td>201-500</td>
+            <td>full tuition fees of 1st semester</td>
+          </tr>
+          <tr>
+            <td>501-1000</td>
+            <td>Study Material (worth Rs. 10000)</td>
+          </tr>
+
+          <tr>
+            <td rowspan="3">1000</td>
+            <td rowspan="3">Medical Colleges (MBBS | BDS | BAMS | BHMS | B.V.Sc)</td>
+            <td rowspan="3">Candidate must have taken admission through NEET counselling using their NEET score</td>
+            <td>1-200</td>
+            <td>full tuition fees of 1st Year</td>
+          </tr>
+          <tr>
+            <td>201-500</td>
+            <td>full tuition fees of 1st semester</td>
+          </tr>
+          <tr>
+            <td>501-1000</td>
+            <td>Study Material (worth Rs. 10000)</td>
+          </tr>
+
+          <tr>
+            <td rowspan="3">5000</td>
+            <td rowspan="3">AICSET associating colleges (B.E/B.Tech, Allied health science, Pharmacy)</td>
+            <td rowspan="3">Candidate must have taken admission through AICSET admission allocation system using their AICSET score</td>
+            <td>1-1000</td>
+            <td>full tuition fees of 1st Year</td>
+          </tr>
+          <tr>
+            <td>1001-2000</td>
+            <td>full tuition fees of 1st semester</td>
+          </tr>
+          <tr>
+            <td>2001-5000</td>
+            <td>Study Material (worth Rs. 10000)</td>
+          </tr>
+        </table> 
+        <h4>Kindly note the followings</h4> 
+        <ol>
+          <li>Scholarships would be distributed after finalization of the admission process and when classes of these courses would be started and as per the rank of AICSET-2023.</li>
+          <li>This would be valid for 2023-24 admission session only</li>
+          <li>If any candidate is found misleading us with fake and wrong information, will be debarred from the scholarship, and his/her candidature will be canceled.</li>
+        </ol>
       <div class="apply-btn">
           <a href="{{ route('dashboard') }}">CLICK HERE TO APPLY</a>
       </div>    

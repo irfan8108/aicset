@@ -18,6 +18,15 @@ class FrontController extends Controller
         return view('front.home');
     }
 
+    public function about()
+    {
+        return view('front.about');
+    }
+    public function eligibility()
+    {
+        return view('front.eligibility');
+    }
+
     public function dashboard()
     {
         $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
@@ -29,6 +38,7 @@ class FrontController extends Controller
             }
             else{
                 if($data['user']->photo && $data['user']->signature)
+                    // return view('front.application_preview', $data);
                     return redirect()->route('application.fee');
                 else
                     return redirect()->route('application.upload_docs');

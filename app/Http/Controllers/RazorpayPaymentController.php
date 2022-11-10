@@ -26,6 +26,7 @@ class RazorpayPaymentController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $input = $request->all();
   
         $api = new Api(config('razor.key'), config('razor.secret'));

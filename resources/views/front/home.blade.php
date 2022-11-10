@@ -37,11 +37,11 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="https://aieesesecondary.co.in/uploads/banner/181639-aieese-s-banner-1.jpg">
+          <img src="{{ asset('uploads/banner1.png') }}">
           <!-- <img src="https://i.ytimg.com/vi/Lb1tm6G7oR8/maxresdefault.jpg"> -->
         </div>
         <div class="item">
-          <img src="https://aieesesecondary.co.in/uploads/banner/181727-aieese-s-banner-2.jpg">
+          <img src="{{ asset('uploads/banner2.png') }}">
           <!-- <img src="https://www.stangerlaw.com/wp-content/uploads/2022/01/StangerLaw-LLC-Law-Scholarship-Contest-1024x555.jpg"> -->
         </div>
       </div>

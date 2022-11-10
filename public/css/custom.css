@@ -656,7 +656,7 @@ nav-left ul li {
 }
 nav-left ul li a {
     display: block;
-    background: #000;
+    background: #2e2e2e;
     color: #efc33f;
     padding: 10px 15px;
     text-decoration: none;
@@ -694,9 +694,9 @@ nav-left ul li ul li a:hover {
 }
 
 .about-detail h3{
-    background: #000;
+    background: #2e2e2e;
     color: #ddd;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0.5em;
     text-align: center;
 }
@@ -721,15 +721,18 @@ nav-left ul li ul li a:hover {
 .form-body .div-{
     margin: 15px 0px;
 }
- #show_hide_password a{
+#show_hide_password, #show_hide_cpassword{
+    position: relative;
+}
+#show_hide_password a{
     position: absolute;
-    top: 32px;
-    right: 30px;
+    top: 7px;
+    right: 8px;
 }
  #show_hide_cpassword a{
     position: absolute;
-    top: 32px;
-    right: 30px;
+    top: 7px;
+    right: 8px;
 }
 .login-btn button{
     width: 100%;
