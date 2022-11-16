@@ -2,36 +2,116 @@
 
 @section('content') 
 
-{{-- left-sidebar --}}
 <div class="container">
   <div class="row" style="margin: 10px 0px 50px 0px;">
+    
+
     <div class="col-sm-2 ">
-      <nav-left class='animated bounceInDown'>
-        <ul>
-          <li><a href='#profile'>Application Procedure</a></li>
-          <li><a href='#profile'>Admission Procedure</a></li>
-          <li><a href='#profile'>Scolarship</a></li>
-          <li><a href='#message'>Messages</a></li>
-          <li class='sub-menu'><a href='#settings'>Settings<div class='fa fa-caret-down right'></div></a>
-            <ul>
-              <li><a href='#settings'>Account</a></li>
-              <li><a href='#settings'>Profile</a></li>
-              <li><a href='#settings'>Secruity &amp; Privacy</a></li>
-              <li><a href='#settings'>Password</a></li>
-              <li><a href='#settings'>Notification</a></li>
-            </ul>
-          </li>
-          <li class='sub-menu'><a href='#message'>Help<div class='fa fa-caret-down right'></div></a>
-            <ul>
-              <li><a href='#settings'>FAQ's</a></li>
-              <li><a href='#settings'>Submit a Ticket</a></li>
-              <li><a href='#settings'>Network Status</a></li>
-            </ul>
-          </li>
-          <li><a href='#message'>FAQ's</a></li>
+      <div id="accordian">
+        <ul class="show-dropdown">
+            <li>
+                <a href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Reports</a></li>
+                    <li><a href="javascript:void(0);">Search</a></li>
+                    <li><a href="javascript:void(0);">Graphs</a></li>
+                    <li><a href="javascript:void(0);">Settings</a></li>
+                </ul>
+            </li>
+            <li class="active">
+                <a href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
+                <ul class="show-dropdown">
+                    <li><a href="javascript:void(0);">Today's tasks</a></li>
+                    <li class="active">
+                        <a href="javascript:void(0);">DrillDown (active)</a>
+                        <ul class="show-dropdown">
+                            <li><a href="javascript:void(0);">Today's tasks</a></li>
+                            <li class="active"><a href="javascript:void(0);">Urgent</a></li>
+                            <li>
+                                <a href="javascript:void(0);">Overdues</a>
+                                <ul>
+                                    <li><a href="javascript:void(0);">Today's tasks</a></li>
+                                    <li><a href="javascript:void(0);">Urgent</a></li>
+                                    <li><a href="javascript:void(0);">Overdues</a></li>
+                                    <li><a href="javascript:void(0);">Recurring</a></li>
+                                    <li>
+                                        <a href="javascript:void(0);">Calendar</a>
+                                        <ul>
+                                            <li><a href="javascript:void(0);">Current Month</a></li>
+                                            <li><a href="javascript:void(0);">Current Week</a></li>
+                                            <li><a href="javascript:void(0);">Previous Month</a></li>
+                                            <li><a href="javascript:void(0);">Previous Week</a></li>
+                                            <li><a href="javascript:void(0);">Next Month</a></li>
+                                            <li><a href="javascript:void(0);">Next Week</a></li>
+                                            <li><a href="javascript:void(0);">Team Calendar</a></li>
+                                            <li><a href="javascript:void(0);">Private Calendar</a></li>
+                                            <li><a href="javascript:void(0);">Settings</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0);">Recurring</a></li>
+                            <li><a href="javascript:void(0);">Settings</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Overdues</a>
+                        <ul>
+                            <li><a href="javascript:void(0);">Today's tasks</a></li>
+                            <li><a href="javascript:void(0);">Urgent</a></li>
+                            <li><a href="javascript:void(0);">Overdues</a></li>
+                            <li><a href="javascript:void(0);">Recurring</a></li>
+                            <li><a href="javascript:void(0);">Settings</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);">Recurring</a></li>
+                    <li><a href="javascript:void(0);">Settings</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Current Month</a></li>
+                    <li><a href="javascript:void(0);">Current Week</a></li>
+                    <li><a href="javascript:void(0);">Previous Month</a></li>
+                    <li><a href="javascript:void(0);">Previous Week</a></li>
+                    <li><a href="javascript:void(0);">Next Month</a></li>
+                    <li><a href="javascript:void(0);">Next Week</a></li>
+                    <li><a href="javascript:void(0);">Team Calendar</a></li>
+                    <li><a href="javascript:void(0);">Private Calendar</a></li>
+                    <li><a href="javascript:void(0);">Settings</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
+                <ul>
+                    <li><a href="javascript:void(0);">Global favs</a></li>
+                    <li><a href="javascript:void(0);">My favs</a></li>
+                    <li><a href="javascript:void(0);">Team favs</a></li>
+                    <li><a href="javascript:void(0);">Settings</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="far fa-bookmark"></i>Bookmarks</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="far fa-envelope"></i>Mail</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="far fa-heart"></i>Favorite</a>
+            </li>
+
         </ul>
-      </nav-left>
     </div>
+    </div>
+
+    
     <div class=" col-sm-10 about-detail">
       <h3>About AICSET scholarship examination</h3>
 
