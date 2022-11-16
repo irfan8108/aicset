@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\RazorpayPaymentController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LinkController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +22,7 @@ use App\Http\Controllers\RazorpayPaymentController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('test', [FrontController::class, 'test']);
 
 
@@ -38,7 +43,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('application_fee', [ApplicationController::class, 'applicationFee'])->name('application.fee');
     Route::get('application_status', [ApplicationController::class, 'applicationStatus'])->name('application.status');
     Route::get('application_print', [ApplicationController::class, 'generatePDF'])->name('application_print');
-
 });
 
+
+Route::get('admin/dashboard',[AdminController::class , 'adminDashboard'])->name('admin_dashboard'); 
+
+    //Link and Page Routes 
+    Route::resource('admin/link', LinkController::class);
+    Route::resource('admin/page', PageController::class);
+    Route::resource('admin/news', NewsController::class);
+
 require __DIR__.'/auth.php';
+

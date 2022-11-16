@@ -15,7 +15,7 @@ class FrontController extends Controller
 
     public function home()
     {
-        return view('front.home');
+        return view('welcome');
     }
 
     public function about()
@@ -51,4 +51,5 @@ class FrontController extends Controller
     public function test(){
         echo 'ENG/'.date('ym')."0";
     }
+
 }
