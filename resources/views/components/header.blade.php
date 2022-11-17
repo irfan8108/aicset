@@ -66,5 +66,17 @@
 </div>
 
 <div class="container marquee_container scrolled_header">
-  <p class="microsoft marquee">Windows 8 and Windows RT are focused on your life—your friends and family, your apps, and your stuff. With new things like the <a href="#">Start screen</a>, <a href="#">charms</a>, and a <a href="#">Microsoft account</a>, you can spend less time searching and more time doing.</p>
+    <marquee class="blink" behavior="alternate" direction="left" class="marqueestyle" onmouseover="this.stop();" onmouseout="this.start();">
+        <span class="marqueetext">
+            <img src="{{ asset('images/new.gif') }}" class="new_item_icon">
+            Application for session 2022-2023 will starting from 18th of Nov, 2022 <a href="{{ route('register') }}">Register Now</a><img src="{{ asset('images/new.gif') }}" class="new_item_icon"></span>
+    </marquee>
+    <!-- <p class="microsoft marquee">
+        {{--@foreach($announcements as $announcement)
+                            {{ ucfirst(strtolower($announcement->title)) }}
+                        @endforeach--}}
+        Application for session 2022-2023 will starting from 18th of Nov, 2022 <a href="{{ route('register') }}">Register Now</a>
+        &nbsp;&nbsp;<span style="color: #ccc">|</span>&nbsp;&nbsp;
+        Application for session 2022-2023 will starting from 18th of Nov, 2022 <a href="{{ route('register') }}">Register Now</a>
+    </p> -->
 </div>

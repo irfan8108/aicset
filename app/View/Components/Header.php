@@ -14,9 +14,10 @@ class Header extends Component
      *
      * @return void
      */
-    public function __construct($links)
+    public function __construct($links, $announcements)
     {
         $this->data['links'] = $links;
+        $this->data['announcements'] = $announcements;
     }
 
     /**

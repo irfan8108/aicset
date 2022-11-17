@@ -536,16 +536,20 @@ ul.footer-privacy-link li span {
     width: 100%;
 }
 
+.right_menu_bar .tab-content {
+    width: 100%;
+}
 .right_menu_bar{
     position: relative;
     overflow-y: hidden;
     min-height: 250px;
 }    
 .right_menu_bar ul {
-    /* width: 100%; */
+    /*width: 100%; */
     padding: 0;
     margin: 0;
 }
+div#tab1{width: 100%;}
 
 /*.text-left {
     text-align: left;
@@ -1026,7 +1030,7 @@ i {
     position: fixed;
     z-index: 12312;
     top: 50px;
-    background: #ddd;
+    background: #ebebeb;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -1047,6 +1051,21 @@ table {
     width: 100%;
 }
 
+
+marquee{font-size: 17px;}
+.blink {
+    animation: blinker 1.1s linear infinite;
+    color: orangered;
+    font-family: sans-serif;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+.marquee_container {
+    padding-top: 5px;
+}
 
 @media(max-width: 600px){
     .top_navbar .navbar-brand img{

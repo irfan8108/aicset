@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<x-header :links="$links['header']" />
+<x-header :links="$links['header']" :announcements="$announcements" />
 
   @yield('content')
 

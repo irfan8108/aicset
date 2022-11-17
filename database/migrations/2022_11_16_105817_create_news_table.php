@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description', 250);
+            $table->integer('priority')->nullable();
             $table->boolean('is_new')->default(false);
             $table->boolean('status')->default(true);
             $table->timestamps();

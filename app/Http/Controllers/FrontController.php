@@ -13,6 +13,7 @@ class FrontController extends Controller
 
     public function __construct(){
         $this->data['links'] = Link::where('parent_id', null)->with('child')->get()->groupBy('type');
+        $this->data['announcements'] = \App\Models\News::orderBy('priority')->get();
     }
 
     public function register(){

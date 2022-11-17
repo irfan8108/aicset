@@ -64,47 +64,47 @@
   <div class="customer-logos slider">
     <div class="slide-in-right slide">
       <a href="">
-        <img src="https://www.education.gov.in/sites/education.gov.in/themes/nexus/images/nceg.png">
+        <img src="{{ asset('images/nceg.png') }}">
       </a>
     </div>
     <div class="slide-in-right slide">
       <a href="">
-        <img src="https://www.education.gov.in/sites/education.gov.in/themes/nexus_se/images/web-info-manager.png">
+        <img src="{{ asset('images/web-info-manager.png') }}">
       </a>
     </div>
     <div class="slide-in-right slide">
       <a href="">
-        <img src="https://www.education.gov.in/sites/education.gov.in/themes/nexus_se/images/onlineservice_logo.png">
+        <img src="{{ asset('images/onlineservice_logo.png') }}">
       </a>
     </div>
     <div class="slide-in-right slide">
       <a href="">
-        <img src="https://www.education.gov.in/sites/education.gov.in/themes/nexus_se/images/datagov_logo.png">
+        <img src="{{ asset('images/datagov_logo.png') }}">
       </a>
     </div>
     <div class="slide-in-right slide">
       <a href="">
-        <img src="https://www.education.gov.in/sites/education.gov.in/themes/nexus_se/images/rti_logo.png">
+        <img src="{{ asset('images/rti_logo.png') }}">
       </a>
     </div>
     <div class="slide-in-right slide">
       <a href="">
-        <img src="https://www.education.gov.in/sites/education.gov.in/themes/nexus_se/images/my_visit.png">
+        <img src="{{ asset('images/my_visit.png') }}">
       </a>
     </div>
     <div class="slide-in-right slide">
       <a href="">
-        <img src="https://www.education.gov.in/sites/education.gov.in/themes/nexus/images/NSP-logo.jpg">
+        <img src="{{ asset('images/NSP-logo.jpg') }}">
       </a>
     </div>
     <div class="slide-in-right slide">
       <a href="">
-        <img src="https://www.education.gov.in/sites/education.gov.in/themes/nexus_se/images/my_gov_logo.png">
+        <img src="{{ asset('images/my_gov_logo.png') }}">
       </a>
     </div>
     <div class="slide-in-right slide">
       <a href="">
-        <img src="https://www.education.gov.in/sites/education.gov.in/themes/nexus/images/indiagov.jpg">
+        <img src="{{ asset('images/indiagov.jpg') }}">
       </a>
     </div>
 </section>
@@ -123,44 +123,19 @@
         <div class="tab-content right_menu_bar" >
           <div id="tab1" class="tab-pane fade in active scroll">
             <ul class="text-left right-annouce" >
-              <li>
-                <img src="{{ asset('uploads/new-gif.gif') }}"
-                class="new_item_icon">
-                <div class="link-">!! Scholarship Process For 2022 Session Announced !!
-                  <a href="">
-                    Read more
-                  </a>
-                </div>
-              </li>
-              <li>
-                <img src="{{ asset('uploads/new-gif.gif') }}"
-                class="new_item_icon">
-                <div class="link-">!! Scholarship Process For 2022 Session Announced !!
-                  Apply !!
-                  <a href="">
-                    Read more
-                  </a>
-                </div>
-              </li>
-              <li>
-                <img src="{{ asset('uploads/new-gif.gif') }}" class="new_item_icon">
-                <div class="link-">!! Scholarship Process For 2022 Session Announced !!
-                  <a href="">
-                    Read more
-                  </a>
-                </div>
-              </li>
-              <li>
-                <img src="{{ asset('uploads/new-gif.gif') }}"
-                class="new_item_icon">
-                <div class="link-">!! Scholarship Process For 2022 Session Announced !!
-                  <a href="">
-                    Read more
-                  </a>
-                </div>
-              </li>
+              @foreach($announcements as $announcement)
+                <li>
+                  <img src="{{ asset('images/new.gif') }}"
+                  class="new_item_icon">
+                  <div class="link-">{{ $announcement->title }}
+                    <a href="#">
+                      Read more
+                    </a>
+                  </div>
+                </li>
+              @endforeach
               <li class="text-left">
-                <a href="" style="color: #efc33f;">
+                <a href="#" style="color: #efc33f;">
                   Click here for all the announcements
                 </a>
               </li>
@@ -173,15 +148,15 @@
      {{--  <div class="vdo">
       <img src="uploads/123.jpg">
       </div> --}}
-      <a href="#" class="apply-anc" style="text-decoration : none; ">
+      <a href="{{ route('register') }}" class="apply-anc" style="text-decoration : none; ">
         <img src="uploads/scholarship.jpg">
         <div class="apply text-center mrgn_btm_zero animnew1">
           <span>
-            Click Here to Apply Now
+            Register Today
           </span>
-          <p style="margin: 0px;line-height: 10px;">
+          <p style="margin: 0px; line-height: 10px;">
             <small style="font-size: 12px;">
-              Academic Session (2023-24)
+              Click Here to Apply Now  
             </small>
           </p>
         </div>
