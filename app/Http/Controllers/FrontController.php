@@ -29,42 +29,29 @@ class FrontController extends Controller
         return view('front.page', $this->data);
     }
 
-    public function detail()
-    {
-        return view('front.detail');
-    }
-
     public function home()
     {
         return view('welcome')->with($this->data);
     }
 
-    public function about()
-    {
-        return view('front.about');
-    }
-    public function eligibility()
-    {
-        return view('front.eligibility');
-    }
-
     public function dashboard()
     {
-        $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
+        // dd('working');
+        $this->data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
         // dd($user);
 
-        if($data['user']->application){
-            if($data['user']->application->status != true)
+        if($this->data['user']->application){
+            if($this->data['user']->application->status != true)
             {
-                if($data['user']->photo && $data['user']->signature)
-                    // return view('front.application_preview', $data);
+                if($this->data['user']->photo && $this->data['user']->signature)
+                    // return view('front.application_preview', $this->data);
                     return redirect()->route('application.fee');
                 else
                     return redirect()->route('application.upload_docs');
             }
         }
-
-        return view('dashboard', $data);
+        // dd('wormimg');
+        return view('dashboard', $this->data);
     }
 
     public function test(){
