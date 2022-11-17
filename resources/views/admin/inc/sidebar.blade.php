@@ -2,7 +2,7 @@ sidebar wrapper -->
 	<div class="sidebar-wrapper" data-simplebar="true">
 		<div class="sidebar-header">
 			<div>
-				ABC Crypto
+				AICSET
 				{{-- <img src="{{ asset('/img/logo2.png') }}" alt="logo icon"> --}}
 			</div>
 			<div>
@@ -14,19 +14,13 @@ sidebar wrapper -->
 		<!--navigation-->
 		<ul class="metismenu" id="menu">
 			<li>
-				<a href="{{ route('dashboard') }}">
+				<a href="{{ route('admin_dashboard') }}">
 					<div class="parent-icon"><i class='bx bx-home'></i>
 					</div>
 					<div class="menu-title">Dashboard</div>
 				</a>
 			</li>
-			<li>
-				<a href="#">
-					<div class="parent-icon"><i class="bx bx-gift"></i>
-					</div>
-					<div class="menu-title">Today Offer</div>
-				</a>
-			</li>
+
 			{{-- <li>
 				<a href="#">
 					<div class="parent-icon"><i class="bx bx-wallet font-30"></i>
@@ -41,9 +35,8 @@ sidebar wrapper -->
 					<div class="menu-title">Generate Invoice</div>
 				</a>
 			</li> --}}
-			@if (Auth::check())
-				@if(Auth::user()->role==='a')
-			<li>
+
+			{{-- <li>
 				<a href="javascript:;" class="has-arrow">
 					<div class="parent-icon"><i class="bx bxs-group"></i>
 					</div>
@@ -55,9 +48,8 @@ sidebar wrapper -->
 					<li> <a href="{{ route('users.index') }}"><i class="bx bx-right-arrow-alt"></i>All Users</a>
 					</li>
 				</ul>
-			</li>
-				@endif
-			@endif	
+			</li> --}}
+
 			{{-- <li class="menu-label">Items</li>
 			<li>
 				<a href="#">
@@ -66,33 +58,46 @@ sidebar wrapper -->
 					<div class="menu-title">Add Stock</div>
 				</a>
 			</li> --}}
-			{{-- <li>
+			<li>
 				<a href="javascript:;" class="has-arrow">
 					<div class="parent-icon"><i class='bx bx-grid-alt' ></i>
 					</div>
-					<div class="menu-title">Categories</div>
+					<div class="menu-title">Links</div>
 				</a>
 				<ul>
-					<li> <a href="{{ route('categories.create') }}"><i class="bx bx-right-arrow-alt"></i>Add Category</a>
+					<li> <a href="{{ route('link.create') }}"><i class="bx bx-right-arrow-alt"></i>Add Link</a>
 					</li>
-					<li> <a href="{{ route('categories.index') }}"><i class="bx bx-right-arrow-alt"></i>All Categories</a>
+					<li> <a href="{{ route('link.index') }}"><i class="bx bx-right-arrow-alt"></i>All Links</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="javascript:;" class="has-arrow">
-					<div class="parent-icon"><i class='bx bx-box' ></i>
+					<div class="parent-icon"><i class='bx bx-book' ></i>
 					</div>
-					<div class="menu-title">Products</div>
+					<div class="menu-title">Pages</div>
 				</a>
 				<ul>
-					<li> <a href="{{ route('products.create') }}"><i class="bx bx-right-arrow-alt"></i>New Product</a>
+					<li> <a href="{{ route('page.create') }}"><i class="bx bx-right-arrow-alt"></i>New Page</a>
 					</li>
-					<li> <a href="{{ route('products.index') }}"><i class="bx bx-right-arrow-alt"></i>All Products</a>
+					<li> <a href="{{ route('page.index') }}"><i class="bx bx-right-arrow-alt"></i>All Pages</a>
 					</li>
 				</ul>
 			</li>
 			<li>
+				<a href="javascript:;" class="has-arrow">
+					<div class="parent-icon"><i class='bx bx-pen' ></i>
+					</div>
+					<div class="menu-title">News</div>
+				</a>
+				<ul>
+					<li> <a href="{{ route('news.create') }}"><i class="bx bx-right-arrow-alt"></i>Add News</a>
+					</li>
+					<li> <a href="{{ route('news.index') }}"><i class="bx bx-right-arrow-alt"></i>All News</a>
+					</li>
+				</ul>
+			</li>
+			{{-- <li>
 				<a href="{{ route('admin.orders') }}">
 					<div class="parent-icon"><i class="bx bx-cart-alt"></i>
 					</div>

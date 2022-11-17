@@ -1,49 +1,31 @@
-		<div class="authentication-header"></div>
-		<header class="login-header shadow">
-			<nav class="navbar navbar-expand-lg navbar-light bg-white rounded fixed-top rounded-0 shadow-sm">
-				<div class="container-fluid">
-					<a class="navbar-brand nav-img" href="{{ route('home') }}">
-						{{-- <img src="{{ asset('admin/assets/images/logo-img.png') }}" width="140" alt="" /> --}}
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/National_emblem_of_Bangladesh.svg/1200px-National_emblem_of_Bangladesh.svg.png" width="110px">
+	<!--start header -->
+	<header>
+		<div class="topbar d-flex align-items-center">
+			<nav class="navbar navbar-expand app_header">
+				<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+				</div>
+				<div class="top-menu-left">
+					<p class="app_header_name"><b>AICSET</b></p>
+				 </div>
+
+				<div class="user-box dropdown">
+					<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<img src="https://w7.pngwing.com/pngs/722/101/png-transparent-computer-icons-user-profile-circle-abstract-miscellaneous-rim-account-thumbnail.png" class="user-img" alt="user avatar">
+						<div class="user-info ps-3">
+							<p class="user-name mb-0">User Name</p>
+							<p class="designattion mb-0">Admin</p>
+						</div>
 					</a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent1">
-						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-							<li class="nav-item"> <a class="nav-link active" aria-current="page" href="#"><i class='bx bx-home-alt me-1'></i>Home</a>
-							</li>
-							<li class="nav-item"> <a class="nav-link" href="#"><i class='bx bx-user me-1'></i>About</a>
-							</li>
-							<li class="nav-item"> <a class="nav-link" href="#"><i class='bx bx-category-alt me-1'></i>Features</a>
-							</li>
-							<li class="nav-item"> <a class="nav-link" href="#"><i class='bx bx-microphone me-1'></i>Contact</a>
-							<li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"><i class='bx bx-microphone me-1'></i>logout</a>
-							</li>
-						</ul>
-					</div>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>
+						</li>
+						<li><a class="dropdown-item" href="javascript:;"><i class="bx bx-cog"></i><span>Settings</span></a>
+						</li>
+						<li><a class="dropdown-item" href="#"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+						</li>
+					</ul>
 				</div>
 			</nav>
-		</header>
-
-{{-- @push('styles') --}}
-	<style type="text/css">
-		.nav-img img{
-			position: absolute;
-			top: 12px;
-			left: 12px;
-			width: 80px;
-		}
-		@media (max-width: 800px){
-			.nav-img img{
-				display: none;
-			}
-		}
-		.authentication-header {
-		    position: absolute;
-		    /*background: #8833ff;*/
-		    background-color: #FFF;
-		    height: 100%;
-		    z-index: -2;
-		}
-	</style>
-{{-- @endpush --}}
+		</div>
+	</header>
+	<!--end header -->
