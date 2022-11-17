@@ -26,7 +26,10 @@ Route::get('/', function () {
 Route::get('test', [FrontController::class, 'test']);
 
 
-Route::get('/',[FrontController::class , 'home'])->name('home'); 
+Route::get('/',[FrontController::class , 'home'])->name('home');
+Route::get('page/{slug}',[FrontController::class , 'page'])->name('page');
+
+
 Route::get('detail',[FrontController::class , 'detail'])->name('detail'); 
 Route::get('about',[FrontController::class , 'about'])->name('about'); 
 Route::get('eligibility',[FrontController::class , 'eligibility'])->name('eligibility'); 
@@ -55,3 +58,5 @@ Route::get('admin/dashboard',[AdminController::class , 'adminDashboard'])->name(
 
 require __DIR__.'/auth.php';
 
+Route::get('register', [FrontController::class , 'register'])->name('register');
+Route::get('login', [FrontController::class , 'login'])->name('login');

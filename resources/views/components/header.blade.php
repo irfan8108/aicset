@@ -13,11 +13,10 @@
         </a>
       </div>
       <div class="navbar-collapse collapse navbar-right main-nav" id="navbar">
-         <ul class="nav navbar-nav ">
-          <li id="sub-3"><a href="{{ route('detail') }}">Scholarship Scheme</a></li>
-          <!-- <li id="sub-2"><a href="{{ route('eligibility') }}">Eligibility Criteria</a></li> -->
-          <li id="sub-2"><a href="#features">Affiliations</a></li>
-          <li id="sub-4"><a href="{{ route('about') }}">About</a></li>
+        <ul class="nav navbar-nav ">
+            @foreach($links as $link)
+                <li><a href="{{ route('page', $link->slug) }}">{{ $link->title }}</a></li>
+            @endforeach
         </ul>
         @if(Auth::check())
           

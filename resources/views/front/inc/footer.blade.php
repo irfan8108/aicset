@@ -2,22 +2,22 @@
 
   <div class="row text-center">
     <div class="col-sm-2">
-      <img class="img-responsive" src="https://www.aieeseprimary.co.in/webassets/images/logo2/msme.png">
+      <img class="img-responsive" src="{{ asset('images/msme.png') }}">
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" src="https://www.aieeseprimary.co.in/webassets/images/logo2/swatch%20bharat.png">
+      <img class="img-responsive" src="{{ asset('images/swatch_bharat.png') }}">
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" src="https://www.aieeseprimary.co.in/webassets/images/logo2/skill%20india.png">
+      <img class="img-responsive" src="{{ asset('images/skill_india.png') }}">
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" src="https://www.aieeseprimary.co.in/webassets/images/logo2/digital%20india.png">
+      <img class="img-responsive" src="{{ asset('images/digital_india.png') }}">
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" src="https://www.aieeseprimary.co.in/webassets/images/logo2/make%20in%20india.png">
+      <img class="img-responsive" src="{{ asset('images/make_in_india.png') }}">
     </div>
     <div class="col-sm-2">
-      <img class="img-responsive" src="https://www.aieeseprimary.co.in/webassets/images/logo2/skill%20india.png">
+      <img class="img-responsive" src="{{ asset('images/skill_india.png') }}">
     </div>
   </div>
 
@@ -29,13 +29,15 @@
       <div class="col-md-7">
         <div class="copyright">
           <ul class="footer-privacy-link">
-            <li><a href="#">Refund & Cancellation</a><span>|</span></li>
-            <li><a href="#">Terms & Conditions</a><span>|</span></li>
-            <li><a href="#">Privacy Policy</a><span>|</span></li>
-            <li><a href="#">Sponsors</a><span>|</span></li><li>
-            <li><a href="#">Online Fee Payment</a><span>|</span></li><li>
-            <li><a href="#">About Us</a><span>|</span></li><li>
-            <li><a href="#">Contact</a></li><li>
+            <li><a href="#">Online Fee Payment</a><span>|</span></li>
+            @foreach($links['footer'] as $link)
+              <li>
+                <a href="{{ route('page', $link->slug) }}">{{ $link->title }}</a>
+                @if(!$loop->last)
+                  <span>|</span>
+                @endif
+              </li>
+            @endforeach
           </ul>
           <p class="copyrightText">
             Copyright © 2014 - 2022 | All Rights Reserved

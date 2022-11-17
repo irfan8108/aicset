@@ -691,12 +691,23 @@ nav-left ul li ul li a:hover {
     border-left: 4px solid #efc33f;
 }
 
+.about-detail h3::after {
+    content: "";
+    background: rgb(239 195 63);
+    position: absolute;
+    width: 95px;
+    height: 5px;
+    left: 0;
+    bottom: -10px;
+}
 .about-detail h3 {
     color: #222;
     padding: 0;
     text-align: left;
     margin-top: 0;
     font-weight: bold;
+    margin-bottom: 25px;
+    position: relative;
 }
 .about-detail .apply-btn{
     text-align: center;
@@ -1022,6 +1033,19 @@ i {
     width: 100%;
 }
 .scrolled_header.blank.active{height: 120px;}
+
+table tr td, table tr th {
+    border: 1px solid #999;
+    padding: 10px 15px;
+}
+table tr th {
+    background: #e9c55a7d;
+    color: #333;
+    /*border-color: #e9c55a7d;*/
+}
+table {
+    width: 100%;
+}
 
 
 @media(max-width: 600px){

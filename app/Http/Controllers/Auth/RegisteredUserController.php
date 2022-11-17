@@ -18,7 +18,7 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create($data)
     {
         $data['states'] = \App\Models\State::whereStatus(true)->get();
         return view('auth.register', $data);
