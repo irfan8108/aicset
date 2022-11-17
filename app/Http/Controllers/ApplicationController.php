@@ -8,9 +8,16 @@ use App\Models\User;
 use App\Models\Payment;
 use Auth;
 use PDF;
+use \App\Models\Link;
 
 class ApplicationController extends Controller
 {
+    private $data = [];
+    public function __construct(){
+        $this->data['links'] = Link::where('parent_id', null)->with('child')->get()->groupBy('type');
+        $this->data['announcements'] = \App\Models\News::orderBy('priority')->get();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +35,7 @@ class ApplicationController extends Controller
      */
     public function create()
     {
-        return view('front.application_form');
+        return view('front.application_form', $this->data);
     }
 
     /**
@@ -138,7 +145,7 @@ class ApplicationController extends Controller
 
         if($application->save())
             // return back()->with('success','Form Submit successfully');
-            return view('front.upload_documents');
+            return view('front.upload_documents', $this->data);
         
         return back()->with('error', 'Something went Wrong !');
 
@@ -179,20 +186,20 @@ class ApplicationController extends Controller
         if($user->save()){
             // return back()->with('success','Form Submit successfully');
             // dd('Proceed To Payment');
-            $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
-            return view('front.application_preview', $data);
+            $this->data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
+            return view('front.application_preview', $this->data);
         }
         
         return back()->with('error', 'Something went Wrong !');
     }
 
     public function appInstructions(){
-        $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
+        $this->data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
 
-        if($this->isApplicationAlreadyFilled($data['user']->application->app_no))
+        if($this->isApplicationAlreadyFilled($this->data['user']->registration->app_no))
             return redirect()->route('dashboard')->with('error', 'Application already filled');
 
-        return view('front.application_instructions', $data);
+        return view('front.application_instructions', $this->data);
     }
 
     public function applicationFee(){
@@ -208,11 +215,14 @@ class ApplicationController extends Controller
                 return back()->with('error', 'Whoops, something went wrong? Please try after sometime');
         }
 
-        return view('front.application_fee')->with(['user' => $user, 'payment' => $payment]);
+        $this->data['user'] = $user;
+        $this->data['payment'] = $payment;
+
+        return view('front.application_fee', $this->data);
     }
     public function applicationStatus(){
-        $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
-        return view('front.application_status', $data);
+        $this->data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
+        return view('front.application_status', $this->data);
     }
 
     private function isApplicationAlreadyFilled($app_no){
@@ -223,8 +233,8 @@ class ApplicationController extends Controller
 
     public function generatePDF(){
         // dd('working');
-        $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();        
-        $pdf = PDF::loadView('front.application_print', $data);
+        $this->data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();        
+        $pdf = PDF::loadView('front.application_print', $this->data);
         return $pdf->stream();
         // return $pdf->download('Application.pdf');
     }
@@ -352,8 +362,8 @@ class ApplicationController extends Controller
         $application->how_hear_about = $request->how_hear_about;
 
         if($application->save())
-            $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
-            return view('front.upload_documents', $data);
+            $this->data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
+            return view('front.upload_documents', $this->data);
         
         return back()->with('error', 'Something went Wrong !');
 

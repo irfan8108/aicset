@@ -56,7 +56,15 @@
                                                 <div class="col-xs-12"><h5>Scholarship Application Form</h5></div>
                                             </div>
                                             <div class="col-xs-6 b-l">
-                                                <div class="col-xs-12"><h6><span class="badge badge-success">Completed</span></h6></div>
+                                                <div class="col-xs-12">
+                                                    <h6>
+                                                        @if($user->application && $user->application->status)
+                                                            <span class="badge badge-success">Completed</span>
+                                                        @else
+                                                            <span class="badge badge-warning">Pending</span>
+                                                        @endif
+                                                    </h6>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -64,7 +72,15 @@
                                                 <div class="col-xs-12"><h5>Upload Photograph & Signature</h5></div>
                                             </div>
                                             <div class="col-xs-6 b-l">
-                                                <div class="col-xs-12"><h6><span class="badge badge-success">Completed</span></h6></div>
+                                                <div class="col-xs-12">
+                                                    <h6>
+                                                        @if($user->photo && $user->signature)
+                                                            <span class="badge badge-success">Completed</span>
+                                                        @else
+                                                            <span class="badge badge-warning">Pending</span>
+                                                        @endif
+                                                    </h6>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -72,35 +88,48 @@
                                                 <div class="col-xs-12"><h5>Application Fee Payment</h5></div>
                                             </div>
                                             <div class="col-xs-6 b-l">
-                                                <div class="col-xs-12"><h6><span class="badge badge-success">Completed</span></h6></div>
+                                                <div class="col-xs-12">
+                                                    <h6>
+                                                        @if($user->application && $user->application->payment->status)
+                                                            <span class="badge badge-success">Completed</span>
+                                                        @else
+                                                            <span class="badge badge-warning">Pending</span>
+                                                        @endif
+                                                    </h6>
+                                                </div>
                                             </div>
                                         </div>
                                     </div> 
                                     
-                                    <!-- <div class="col-sm-12 form_status text-center">
+                                    <div class="col-sm-12 form_status text-center">
                                        
-                                       <div class="row">
+                                       <!-- <div class="row">
                                          <div class="col-sm-12 ">
                                                 <p>You have completed Registration form. Please note down the Application Number for future references</p>
                                                 <p>Application Number: <a href="#">2135465545</a></p>
                                             </div>  
-                                       </div>
+                                       </div> -->
 
-                                    </div> --> 
+                                    </div> 
 
-                                    <!-- <ul class="list-inline  text-center">
-                                        <li><button type="button" class="btn-primary next-step">Proceed to Apply</button></li>
-                                    </ul> -->
-
-                                    <div class="row text-center">
-                                        <div class="col-md-12">
-                                            <br>
-                                                <a href="{{ route('application.instructions') }}" class="btn-primary next-step">
-                                                    Download Application Form <i class='bx bxs-download'></i>
-                                                </a>
-                                            <br><br><br><br>
+                                    @if($user->application && $user->application->status)
+                                        <div class="row text-center">
+                                            <div class="col-md-12">
+                                                <br>
+                                                    <a href="{{ route('application.instructions') }}" class="btn-primary next-step">
+                                                        Download Application Form <i class='bx bxs-download'></i>
+                                                    </a>
+                                                <br><br><br><br>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @else
+                                        <div class="row text-center">
+                                            <div class="col-md-12">
+                                                <br><br>
+                                                <a href="{{ route('application.instructions') }}" class="btn-primary next-step">Proceed to Apply</a>
+                                            </div>
+                                        </div>
+                                    @endif
 
                                 </div>
 

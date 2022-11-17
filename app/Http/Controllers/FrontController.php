@@ -10,7 +10,6 @@ use \App\Models\Link;
 class FrontController extends Controller
 {
     private $data = [];
-
     public function __construct(){
         $this->data['links'] = Link::where('parent_id', null)->with('child')->get()->groupBy('type');
         $this->data['announcements'] = \App\Models\News::orderBy('priority')->get();
@@ -50,7 +49,7 @@ class FrontController extends Controller
                     return redirect()->route('application.upload_docs');
             }
         }
-        // dd('wormimg');
+        
         return view('dashboard', $this->data);
     }
 

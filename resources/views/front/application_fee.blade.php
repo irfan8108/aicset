@@ -83,31 +83,31 @@
 
                                             <h3 class="text-center title_heading"><b>Step 1:</b> Application Fee</h3>
 
-                                            <table class="table table-striped table-bordered">
+                                            <table class="table table-striped table-bordered fee_breakup_table">
                                                 <tr>
                                                     <th colspan="2">Application Fee Breakup</th>
                                                 </tr>
                                                 <tr>
-                                                    <th>Application Fee (General)</th>
-                                                    <td>1050</td>
+                                                    <td>Application Fee (General)</td>
+                                                    <td><i class='bx bx-rupee'></i>{{ $fee = $user->application->fee }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>GST(Service Tax)</th>
-                                                    <td>50</td>
+                                                    <td>GST(Service Tax)</td>
+                                                    <td><i class='bx bx-rupee'></i>{{ $gst = $fee * 18/100 }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Payable Amount</th>
-                                                    <th>1100</th>
+                                                    <td>Payable Amount</td>
+                                                    <td><i class='bx bx-rupee'></i>{{ $fee + $gst }}</td>
                                                 </tr>
                                             </table>
 
                                             <!-- <input type="submit" value="Proceed to Pay" class="btn btn-success"> -->
 
-                                            <form action="{{ route('razorpay.payment.store') }}" method="POST" >
+                                            <form action="{{ route('razorpay.payment.store') }}" method="POST" id="payment_form">
                                                 @csrf
                                                 <script src="https://checkout.razorpay.com/v1/checkout.js"
                                                         data-key="{{ config('razor.key') }}"
-                                                        data-amount="{{ $user->application->fee * 100 }}"
+                                                        data-amount="{{ ($user->application->fee * 118/100) * 100 }}"
                                                         data-buttontext="Proceed to Pay"
                                                         data-name="AICSET.COM"
                                                         data-description="{{$payment->id}}"
@@ -152,8 +152,15 @@
             min-width: 150px;
             font-weight: bold;
         }
+        .fee_breakup_table i{margin: 0}
     </style>
 @endpush
 
 @push('scripts')
+    <script type="text/javascript">
+        $('#payment_form').submit(function(){
+            $(this).find('input[type=submit]').prop('disabled', true);
+            $(this).find('input[type=submit]').val('Please wait..');
+        });
+    </script>
 @endpush	
