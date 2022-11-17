@@ -210,7 +210,7 @@ class ApplicationController extends Controller
             $payment = new Payment();
             $payment->user_id = $user->id;
             $payment->app_no = $user->application->app_no;
-            $payment->amount = $user->application->fee;
+            $payment->amount = $user->application->fee * 118/100;
             if(!$payment->save())
                 return back()->with('error', 'Whoops, something went wrong? Please try after sometime');
         }

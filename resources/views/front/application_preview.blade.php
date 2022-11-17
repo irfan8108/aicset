@@ -238,6 +238,14 @@
 
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/dashbord-style.css') }}">
+    <style type="text/css">
+        table tr th {
+            background: #f9f9f9;
+        }
+        table tr th.head {
+            background: #54545214;
+        }
+    </style>
 @endpush
 
 @push('scripts')
