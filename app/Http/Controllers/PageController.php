@@ -102,7 +102,13 @@ class PageController extends Controller
             'link_id'=> 'required'
         ]);
         $page = Page::find($id);
-        if ($request->hasfile('banner')) {
+        if ($request->hasfile('banner') && $request->banner != '') {
+            $page = Page::where('id',$id)->first();
+            $file_path = public_path('/uploads/page/'.$page->banner);
+            //You can also check existance of the file in storage.
+            if(Page::exists($file_path)) {
+               unlink($file_path); //delete from storage
+            }
             $file = $request->file('banner');
             $extention = $file->getClientOriginalExtension();
             $file_name = rand(1000,5000).time().'.'.$extention;

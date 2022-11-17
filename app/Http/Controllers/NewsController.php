@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\News;
 
 class NewsController extends Controller
 {
@@ -13,7 +14,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('admin.news');
+        $data['news'] = News::get();
+        return view('admin.news', $data);
     }
 
     /**
@@ -34,7 +36,23 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:200',
+            'description' => 'required|max:250',
+        ]);
+        // dd($request->all());
+        $new = new News();
+        $new->title = $request->title; 
+        $new->description = $request->description; 
+        $new->is_new = $request->is_new ?? false; 
+        $new->status = $request->status ?? true; 
+
+        if ($new->save()) {
+            return back()->with('success', 'Your News Data Saved Successfully');
+        }else{
+            return back()->with('error', 'Something went wrong !');
+        }
+
     }
 
     /**
@@ -54,9 +72,9 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(News $news)
     {
-        //
+        return view('admin.addNews')->with(compact('news'));
     }
 
     /**
@@ -68,7 +86,22 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:200',
+            'description' => 'required|max:250',
+        ]);
+        // dd($request->all());
+        $new = News::find($id);
+        $new->title = $request->title; 
+        $new->description = $request->description; 
+        $new->is_new = $request->is_new ?? false; 
+        $new->status = $request->status ?? true; 
+
+        if ($new->save()) {
+            return redirect()->route('news.index')->with('success', 'News Data Updated Successfully');
+        }else{
+            return back()->with('error', 'Something went wrong !');
+        }
     }
 
     /**
@@ -77,8 +110,13 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(News $news)
     {
-        //
+        if($news!==null){
+           $news->delete();
+           return back()->with('success', "News Deleted Successfully");
+        }else{
+            return back()->with('error', 'Data Already Deleted !');
+        }
     }
 }

@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+	<link rel="icon" href="{{ asset('uploads/logo-3.png') }}" type="image/png" />
 	<!--plugins-->
 	<link href="{{ asset('admin/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
 	<link href="{{ asset('admin/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="{{ asset('admin/assets/css/header-colors.css') }}" />
 	<link rel="stylesheet" href="{{ asset('admin/assets/css/common.css') }}" />
 	@stack('styles')
-	<title>IIPA-Magazines</title>
+	<title>All India Combined Scholarship Entrance Test</title>
 </head>
 
 <body>

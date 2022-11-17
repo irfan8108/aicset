@@ -13,7 +13,7 @@
 						<ol class="breadcrumb mb-0 p-0">
 							<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 							</li>
-							<li class="breadcrumb-item active" aria-current="page">@if(@$new) Update News @else Add News @endif</li>
+							<li class="breadcrumb-item active" aria-current="page">@if(@$news) Update News @else Add News @endif</li>
 						</ol>
 					</nav>
 				</div>
@@ -26,9 +26,9 @@
 				  <h5 class="card-title">@if(@$new) Update News @else Add New News @endif</h5>
 				  <hr/>
                    <div class="form-body mt-4">
-                   	<form action="@if(@$new){{ route('news.update', $new->id) }}@else{{ route('news.store') }}@endif" method="post" enctype="multipart/form-data">
+                   	<form action="@if(@$news){{ route('news.update',$news->id) }}@else{{ route('news.store') }}@endif" method="post" enctype="multipart/form-data">
                    		@csrf
-                   		@if(@$new)
+                   		@if(@$news)
                    			@method('put')
                    		@endif
 					    <div class="row">
@@ -38,23 +38,30 @@
 							  <div class="mb-3">
 								<label for="linktitle" class="form-label">News Title *</label>
 								<small class="text-danger">@error('title'){{ $message }}@enderror</small>
-								<input type="text" name="title" @if(@$new)value="{{ $new->title }}"@endif class="form-control" id="linktitle" placeholder="Enter News title">
+								<input type="text" name="title" @if(@$news)value="{{ $news->title }}"@endif class="form-control" id="linktitle" placeholder="Enter News title">
 							  </div>
 							  <div class="col-12">
 								<label class="form-label">News Description</label>
-								<textarea class="form-control" name="description" id="" placeholder="Write description..." rows="3">
-									{{ @$new->description }}
-								</textarea>
+								<small class="text-danger">@error('description'){{ $message }}@enderror</small>
+								<input type="text" name="description" @if(@$news)value="{{ $news->description }}"@endif class="form-control" placeholder="News description">
 							  </div>
+							  <div class="mb-3 mt-3">
+								<label for="is_newid" class="form-label">This is New ? [Yes / No]</label>
+								  <select name="is_new" class="form-select mb-3" aria-label="Default select example" id="is_newid">
+								  	<option value="">Select</option>
+									<option value="1" {{ @$news->is_new===1 ? 'selected': '' }}>Yes</option>
+									<option value="0" {{ @$news->is_new===0 ? 'selected': '' }}>No</option>
+								  </select>
+							  </div>	
 							  <div class="mb-3 mt-3">
 								<label for="bstatus" class="form-label">Select Status</label>
 								  <select name="status" class="form-select mb-3" aria-label="Default select example" id="bstatus">
-									<option value="1" {{ @$new->status===1 ? 'selected': '' }}>Active</option>
-									<option value="0" {{ @$new->status===0 ? 'selected': '' }}>De-Active</option>
+									<option value="1" {{ @$news->status===1 ? 'selected': '' }}>Active</option>
+									<option value="0" {{ @$news->status===0 ? 'selected': '' }}>De-Active</option>
 								  </select>
 							  </div>	  
 							   <div class="d-grid text-center mt-4">
-	                              <input type="submit" class="btn btn-primary" value="{{ @$new ? 'Update News' : 'Save News' }}"/>
+	                              <input type="submit" class="btn btn-primary" value="{{ @$news ? 'Update News' : 'Save News' }}"/>
 							   </div>
 	                        </div>
 						   </div>
@@ -73,5 +80,7 @@
 @endpush
 
 @push('scripts')
+<script>
 
+</script>
 @endpush	

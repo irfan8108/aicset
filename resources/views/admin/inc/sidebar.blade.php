@@ -86,7 +86,7 @@ sidebar wrapper -->
 			</li>
 			<li>
 				<a href="javascript:;" class="has-arrow">
-					<div class="parent-icon"><i class='bx bx-pen' ></i>
+					<div class="parent-icon"><i class="fadeIn animated bx bx-calendar-week"></i>
 					</div>
 					<div class="menu-title">News</div>
 				</a>
