@@ -8,7 +8,7 @@
 					<p class="app_header_name"><b>AICSET</b></p>
 				 </div>
 
-				<div class="user-box dropdown">
+				<div class="user-box dropdown ms-auto">
 					<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						<img src="https://w7.pngwing.com/pngs/722/101/png-transparent-computer-icons-user-profile-circle-abstract-miscellaneous-rim-account-thumbnail.png" class="user-img" alt="user avatar">
 						<div class="user-info ps-3">
