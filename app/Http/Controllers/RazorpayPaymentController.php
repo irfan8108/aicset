@@ -43,10 +43,20 @@ class RazorpayPaymentController extends Controller
                 return redirect()->back();
             }
         }
-          
+        
+        // dd($response);
+
+        $payment = \App\Models\Payment::find($response['description']);
+        $payment->status = true;
+
+        $application = \App\Models\Application::where('user_id', $payment->user_id)->where('app_no', $payment->app_no)->first();
+        $application->status = true;
+
+        if($payment->save() && $application->save())
+            return redirect()->route('application.status');
+
+        return redirect()->route('dashboard')->with('error', 'Whoops, Payment received! but something went wrong? Please contact tech. support');
         // Session::put('success', 'Payment successful');
         // return redirect()->back();
-
-        return redirect()->route('application.status');
     }
 }

@@ -110,7 +110,7 @@
                                                         data-amount="{{ $user->application->fee * 100 }}"
                                                         data-buttontext="Proceed to Pay"
                                                         data-name="AICSET.COM"
-                                                        data-description="AICSET"
+                                                        data-description="{{$payment->id}}"
                                                         data-image="https://www.itsolutionstuff.com/frontTheme/images/logo.png"
                                                         data-prefill.name="{{ $user->application->name }}"
                                                         data-prefill.email="{{ $user->email }}"

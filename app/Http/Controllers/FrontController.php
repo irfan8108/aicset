@@ -33,10 +33,8 @@ class FrontController extends Controller
         // dd($user);
 
         if($data['user']->application){
-            if($data['user']->application->status == true){
-                dd('Application Completed');
-            }
-            else{
+            if($data['user']->application->status != true)
+            {
                 if($data['user']->photo && $data['user']->signature)
                     // return view('front.application_preview', $data);
                     return redirect()->route('application.fee');

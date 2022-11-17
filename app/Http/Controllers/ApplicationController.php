@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Application;
 use App\Models\User;
+use App\Models\Payment;
 use Auth;
 use PDF;
 
@@ -187,18 +188,38 @@ class ApplicationController extends Controller
 
     public function appInstructions(){
         $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
+
+        if($this->isApplicationAlreadyFilled($data['user']->application->app_no))
+            return redirect()->route('dashboard')->with('error', 'Application already filled');
+
         return view('front.application_instructions', $data);
     }
 
     public function applicationFee(){
-        $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
-        return view('front.application_fee', $data);
+        $user = User::where('id', Auth::user()->id)->with('application','registration')->first();
+        $payment = Payment::where('user_id', $user->id)->where('app_no', $user->application->app_no)->first();
+
+        if(!$payment){
+            $payment = new Payment();
+            $payment->user_id = $user->id;
+            $payment->app_no = $user->application->app_no;
+            $payment->amount = $user->application->fee;
+            if(!$payment->save())
+                return back()->with('error', 'Whoops, something went wrong? Please try after sometime');
+        }
+
+        return view('front.application_fee')->with(['user' => $user, 'payment' => $payment]);
     }
     public function applicationStatus(){
         $data['user'] = User::where('id', Auth::user()->id)->with('application','registration')->first();
         return view('front.application_status', $data);
     }
 
+    private function isApplicationAlreadyFilled($app_no){
+        if(Application::where('app_no', $app_no)->whereStatus(true)->first())
+            return true;
+        return false;
+    }
 
     public function generatePDF(){
         // dd('working');

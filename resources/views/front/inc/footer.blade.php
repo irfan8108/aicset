@@ -26,7 +26,7 @@
 <footer id="footer" class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-md-7">
         <div class="copyright">
           <ul class="footer-privacy-link">
             <li><a href="#">Refund & Cancellation</a><span>|</span></li>
@@ -38,27 +38,24 @@
             <li><a href="#">Contact</a></li><li>
           </ul>
           <p class="copyrightText">
-            All India Combined Scholarship Entrance Test. 
+            Copyright © 2014 - 2022 | All Rights Reserved
+          </p>
+          <hr>
+          <p class="mb-10 displayNone">
+            Last updated on: {{ date("d-m-Y") }}
           </p>
         </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-md-5">
         <div class="copyright text-right rightCopywrite">
           <p class="mb-10">
             <span id="ContentPlaceHolder1_UserCMSFooter1_UserPageLastUpdateDate1_lblPageLastUpdateDate">
-              Copyright © 2022
-              <strong>
-                All Rights Reserved.
-              </strong>
+              <b>All India Combined Scholarship Entrance Test (AICSET) </b>
             </span>
           </p>
-          <p class="mb-10 displayNone">
-            Website last updated on: 19-10-2022
+          <p class="displayNone">
+            <img class="img-responsive" src="{{ asset('images/digIndia.png') }}">
           </p>
-            <p class="displayNone">
-              <img class="img-responsive" src="{{ asset('uploads/skill.png') }}">
-              <img class="img-responsive" src="{{ asset('uploads/pngegg.png') }}">
-            </p>
         </div>
       </div>
     </div>

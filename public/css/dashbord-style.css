@@ -32,8 +32,7 @@ button:focus,
 	background-color: #333;
 }
 .signup-step-container{
-	padding: 60px 0px;
-	padding-bottom: 60px;
+	padding: 50px 0px 140px 0;
 }
 @media(max-width: 700px){
     .signup-step-container{
@@ -431,3 +430,14 @@ input[type="checkbox"]:checked::before{
     .wizard h3.title_heading {
     font-weight: normal;
 }
+
+nav-left ul li a:hover {
+    background: #fff;
+    color: #222;
+    font-weight: bold;
+}
+nav-left ul li.disabled a {
+    color: #a9a6a6;
+    cursor: not-allowed;
+}
+nav-left ul li.disabled a:hover{background: transparent; color: #a9a6a6; font-weight: normal;}

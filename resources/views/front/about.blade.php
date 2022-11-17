@@ -6,22 +6,36 @@
   <div class="row" style="margin: 10px 0px 50px 0px;">
     
 
-    <div class="col-sm-2 ">
+    <div class="col-md-3">
       <div id="accordian">
         <ul class="show-dropdown">
+            
             <li>
-                <a href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                <a href="javascript:void(0);">Important Dates</a>
             </li>
+
             <li>
-                <a href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
+                <a href="javascript:void(0);">Scholarship Scheme</a>
                 <ul>
-                    <li><a href="javascript:void(0);">Reports</a></li>
-                    <li><a href="javascript:void(0);">Search</a></li>
-                    <li><a href="javascript:void(0);">Graphs</a></li>
-                    <li><a href="javascript:void(0);">Settings</a></li>
+                    <li><a href="javascript:void(0);">Scholarship Layout</a></li>
+                    <li><a href="javascript:void(0);">Scholarship Structure</a></li>
+                    <li><a href="javascript:void(0);">Get In Touch With Us</a></li>
                 </ul>
             </li>
-            <li class="active">
+
+            <li>
+                <a href="javascript:void(0);">Eligibility Criteria</a>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);">Affiliation</a>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);">Scholarship Structure</a>
+            </li>
+            
+            <!-- <li class="active">
                 <a href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
                 <ul class="show-dropdown">
                     <li><a href="javascript:void(0);">Today's tasks</a></li>
@@ -93,26 +107,14 @@
                     <li><a href="javascript:void(0);">Team favs</a></li>
                     <li><a href="javascript:void(0);">Settings</a></li>
                 </ul>
-            </li>
-            <li>
-                <a href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
-            </li>
-            <li>
-                <a href="javascript:void(0);"><i class="far fa-bookmark"></i>Bookmarks</a>
-            </li>
-            <li>
-                <a href="javascript:void(0);"><i class="far fa-envelope"></i>Mail</a>
-            </li>
-            <li>
-                <a href="javascript:void(0);"><i class="far fa-heart"></i>Favorite</a>
-            </li>
+            </li> -->
 
         </ul>
     </div>
     </div>
 
     
-    <div class=" col-sm-10 about-detail">
+    <div class=" col-md-9 about-detail">
       <h3>About AICSET scholarship examination</h3>
 
       <p>Dreaming big is the nature of human beings and this should always remain so. The changing phase of a student’s life begins when he or she enters college but this decision is very confusing. It is a stepping stone and needs care and attention to take the right decision and this is extremely critical as the decision shall be the subject matter for a whole life. Thus, AICSET (ALL INDIA COMBINED SCHOLARSHIP ENTRANCE TEST) turns out to be that guiding force that helps these young minds choose wisely. AICSET is not just an exam but a huge opportunity for students. All the JEE Mains / NEET / Computer Application / Management aspirants are eligible to apply for this most sought scholarship exam it helps qualified students with a scholarship who wish to pursue Engineering / MBBS / Health Science / BBA / BCA Courses from the government or the private institutions. </p>

@@ -23,39 +23,41 @@
       </div>
     </div> --}}
 
+    <section class="scrolled_header blank"></section>
+
     <div class="col-md-12 ">
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-      </ol>
+      <div id="carousel-example-generic" class="carousel slide scrolled_header" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="{{ asset('uploads/banner1.png') }}">
-          <!-- <img src="https://i.ytimg.com/vi/Lb1tm6G7oR8/maxresdefault.jpg"> -->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="{{ asset('uploads/banner1.png') }}">
+            <!-- <img src="https://i.ytimg.com/vi/Lb1tm6G7oR8/maxresdefault.jpg"> -->
+          </div>
+          <div class="item">
+            <img src="{{ asset('uploads/banner2.png') }}">
+            <!-- <img src="https://www.stangerlaw.com/wp-content/uploads/2022/01/StangerLaw-LLC-Law-Scholarship-Contest-1024x555.jpg"> -->
+          </div>
         </div>
-        <div class="item">
-          <img src="{{ asset('uploads/banner2.png') }}">
-          <!-- <img src="https://www.stangerlaw.com/wp-content/uploads/2022/01/StangerLaw-LLC-Law-Scholarship-Contest-1024x555.jpg"> -->
-        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
     </div>
 
   </div>

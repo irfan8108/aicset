@@ -24,10 +24,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
-
 // --------for-active-class-on-other-page-----------
 jQuery(document).ready(function($){
   	// Get current path and find target link
@@ -42,4 +38,15 @@ jQuery(document).ready(function($){
   	// Add active class to target link
   	target.parents("li").addClass('active');
   	target.parents("ul").addClass("show-dropdown");
+});
+
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if(scroll > 0){
+        $('.scrolled_header').addClass('active');
+    }
+    else{
+        $('.scrolled_header').removeClass('active');
+    }
+    // console.log(scroll);
 });

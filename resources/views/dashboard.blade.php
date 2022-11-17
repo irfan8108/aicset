@@ -5,53 +5,32 @@
         <div class="col-xs-12">
         <div class="row text-right dashbord_header">
             <div class="col-md-9 col-xs-12"><p><b>Name:</b> {{ Auth::user()->name }}</p></div>
-            <div class="col-md-3 col-xs-12"><p><b>Application No:</b>{{ $user->registration->app_no }}</p></div>
+            <div class="col-md-3 col-xs-12"><p><b>Application No: </b>{{ $user->registration->app_no }}</p></div>
         </div>
         </div>
     </div>      
 	<section class="signup-step-container">
         <div class="container">
-        	<div class="row d-fle justify-content-center">
-                    <!-- <div class="col-md-3 col-sm-0"></div> -->
-            	<div class="col-sm-12 col-md-12 wizard">
-            		<div class="wizard-inner">
-                        <div class="connecting-line"></div>
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="disabled">
-                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" aria-expanded="true"><span class="round-tab">1</span> <i>Fill The Form</i></a>
-                            </li>
-                            <li role="presentation" class="disabled">
-                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab"><span class="round-tab">2</span> <i>Upload Documents</i></a>
-                            </li>
-                            <li role="presentation" class="disabled">
-                                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" aria-expanded="true"><span class="round-tab">3</span> <i>Form Preview & Submit</i></a>
-                            </li>
-                            <li role="presentation" class="disabled">
-                                <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab"><span class="round-tab">4</span> <i>Fee Payment</i></a>
-                            </li>
-                            <li role="presentation" class="disabled">
-                                <a href="#step5" data-toggle="tab" aria-controls="step5" role="tab"><span class="round-tab">5</span> <i>Application Status</i></a>
-                            </li>
-                        </ul>
-                    </div>
-            	</div>
-            </div>	
             <div class="row  justify-content-center">
-            	<!-- <div class="col-md-3" style="padding-top: 20px;">
+            	<div class="col-md-3" style="padding-top: 20px;">
             		<div class="col-sm-12 ap_progress">
-					    <p>Application Progress Status</p>
+					    <p><b>My Scholarship Application</b></p>
 	            		<nav-left class='animated bounceInDown '>
 					        <ul>
-					          <li><a href='#profile'><i class="bx bx-right-arrow-alt"></i>View Registration Form</a></li>
-					          <li><a href='#profile'><i class="bx bx-right-arrow-alt"></i>Complete Application Form</a></li>
-					          <li><a href='#profile'><i class="bx bx-right-arrow-alt"></i>Uploads Documents </a></li>
-					          <li><a href='#profile'><i class="bx bx-right-arrow-alt"></i>Pay Appication Fee </a></li>
-					          <li><a href='#profile'><i class="bx bx-right-arrow-alt"></i>Print Of confirmation </a></li>
+					          <li class="disabled"><a href="javascript:void(0)"><i class="bx bx-right-arrow-alt"></i>Admit Card</a></li>
+					          <li class="disabled"><a href="javascript:void(0)"><i class="bx bx-right-arrow-alt"></i>Online Examination</a></li>
+                              <li class="disabled"><a href="javascript:void(0)"><i class="bx bx-right-arrow-alt"></i>Score Card/Result</a></li>
+                              <li class="disabled"><a href="javascript:void(0)"><i class="bx bx-right-arrow-alt"></i>Admission Counselling</a></li>
+				                <li class="" style="background: #f9f9f9; border-top: 1px solid #ddd;">
+                                    <a href='#' style="color: #222">
+                                        <i class='bx bx-support'></i> Technical Support
+                                    </a>
+                                </li>
 					        </ul>
 					    </nav-left>
 					</div>    
-            	</div> -->
-                <div class="col-md-12">
+            	</div>
+                <div class="col-md-9">
                     <div class="wizard">
                         <form role="form" action="{{ route('application.store') }}" class="login-box" enctype="multipart/form-data" method="post">
                             @csrf
@@ -77,7 +56,7 @@
                                                 <div class="col-xs-12"><h5>Scholarship Application Form</h5></div>
                                             </div>
                                             <div class="col-xs-6 b-l">
-                                                <div class="col-xs-12"><h6><span class="badge badge-warning">Pending</span></h6></div>
+                                                <div class="col-xs-12"><h6><span class="badge badge-success">Completed</span></h6></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -85,7 +64,7 @@
                                                 <div class="col-xs-12"><h5>Upload Photograph & Signature</h5></div>
                                             </div>
                                             <div class="col-xs-6 b-l">
-                                                <div class="col-xs-12"><h6><span class="badge badge-warning">Pending</span></h6></div>
+                                                <div class="col-xs-12"><h6><span class="badge badge-success">Completed</span></h6></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -93,7 +72,7 @@
                                                 <div class="col-xs-12"><h5>Application Fee Payment</h5></div>
                                             </div>
                                             <div class="col-xs-6 b-l">
-                                                <div class="col-xs-12"><h6><span class="badge badge-warning">Pending</span></h6></div>
+                                                <div class="col-xs-12"><h6><span class="badge badge-success">Completed</span></h6></div>
                                             </div>
                                         </div>
                                     </div> 
@@ -115,7 +94,10 @@
 
                                     <div class="row text-center">
                                         <div class="col-md-12">
-                                            <br><a href="{{ route('application.instructions') }}" class="btn-primary next-step">Proceed To Complete Application</a>
+                                            <br>
+                                                <a href="{{ route('application.instructions') }}" class="btn-primary next-step">
+                                                    Download Application Form <i class='bx bxs-download'></i>
+                                                </a>
                                             <br><br><br><br>
                                         </div>
                                     </div>
